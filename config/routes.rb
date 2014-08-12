@@ -9,5 +9,6 @@ Flix::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get "movies" => "movies#index"
+  get "movies/:id" => "movies#show", as: "movie"
 
 end

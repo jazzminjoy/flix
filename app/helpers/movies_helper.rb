@@ -10,13 +10,16 @@ module MoviesHelper
 			end
 		end
 	end
-
+ 
 	def format_release_date(movie)
 		if movie.released_on.blank?
 			"Release date unknown"
 		else
-			lapse = "(" +
-			 time_ago_in_words(movie.released_on) + " ago)"
+			full_release_date = 
+				movie.released_on.to_s(:release_date) +
+			 	" (" +
+			 	time_ago_in_words(movie.released_on) + 
+			 	" ago)"
 		end
 	end
 end
